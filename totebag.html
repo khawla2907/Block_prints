@@ -809,7 +809,7 @@
     <nav id="main-nav">
       <a href="index.html">HOME</a>
       <a href="aboutus.html">ABOUT</a>
-      <a href="stitched.html">STITCHED</a>
+      <a href="classicdou.html">STITCHED</a>
       <a href="unstitched.html">UNSTITCHED</a>
       <a href="homedecor.html">HOME DECOR</a>
       <a href="totebag.html">TOTE BAG</a>
@@ -896,7 +896,7 @@
           <li><a href="totebag.html">Totebag</a></li>
           <li><a href="dupandstole.html">Dupatta and Stoles</a></li>
           <li><a href="homedecor.html">Home Decor</a></li>
-          <li><a href="stitched.html">Stitched</a></li>
+          <li><a href="classicdou.html">Stitched</a></li>
         </ul>
       </div>
     </div>
@@ -964,7 +964,8 @@
             "categoryLabel": "Tote Bag",
             "material": "Cotton",
             "popularity": 3,
-            "order": 1
+            "order": 1,
+            "page": "product-blush-tote-bag.html"
       },
       {
             "id": "midnight-bloom-tote",
@@ -980,7 +981,8 @@
             "categoryLabel": "Tote Bag",
             "material": "Cotton",
             "popularity": 2,
-            "order": 2
+            "order": 2,
+            "page": "product-midnight-bloom-tote.html"
       },
       {
             "id": "scarlet-pouch",
@@ -996,7 +998,8 @@
             "categoryLabel": "Pouch / Bag",
             "material": "Cotton",
             "popularity": 1,
-            "order": 3
+            "order": 3,
+            "page": "product-scarlet-pouch.html"
       }
 ];
 
@@ -1042,7 +1045,7 @@
               <div class="product-price">${formatPrice(product.price)}</div>
             </div>
             <div class="product-actions">
-              <button class="details-btn" onclick="openQuickView('${product.id}')">Quick View</button>
+              <button class="details-btn" onclick="window.location.href='${product.page}'">Quick View</button>
               <button class="add-listing-btn" onclick="addProductToCart('${product.id}')">Add to Cart</button>
             </div>
           </div>
