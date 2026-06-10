@@ -268,7 +268,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
-      padding: 60px 6%;
+      padding: 150px 6% 60px;
       align-items: flex-start;
     }
 
@@ -651,6 +651,158 @@
 
 
     
+    /* ===== PRODUCT PAGE SPACING FIX ===== */
+    /* Keeps product pages from going underneath the desktop navbar. */
+    .product-container {
+      padding-top: 150px;
+    }
+
+    /* ===== MOBILE PRODUCT PAGE FIX ===== */
+    @media (max-width: 768px) {
+      html, body {
+        overflow-x: hidden;
+      }
+
+      /* On phones the fixed navbar was covering the product title/details.
+         Sticky keeps the navbar visible without overlapping the product area. */
+      header {
+        position: sticky;
+        top: 0;
+        padding: 12px 18px;
+        min-height: 86px;
+      }
+
+      .logo img {
+        height: 58px;
+      }
+
+      .menu-toggle {
+        width: 34px;
+        height: 24px;
+      }
+
+      nav {
+        top: 100%;
+        max-height: calc(100vh - 86px);
+        overflow-y: auto;
+      }
+
+      .product-container {
+        padding: 28px 5% 45px !important;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .gallery,
+      .details {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .gallery {
+        margin: 0 auto;
+      }
+
+      .mySwiper2,
+      .mySwiper2 .swiper-wrapper,
+      .mySwiper2 .swiper-slide {
+        width: 100%;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .swiper-thumb .swiper-slide {
+        height: 78px;
+      }
+
+      .details {
+        padding: 0 4px;
+      }
+
+      .details h1 {
+        font-size: 32px;
+        line-height: 1.15;
+        margin-bottom: 8px;
+      }
+
+      .details p.price {
+        font-size: 23px;
+        margin: 8px 0;
+      }
+
+      .details h4 {
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+
+      .options-group {
+        gap: 9px;
+        margin-bottom: 10px;
+      }
+
+      .option-button {
+        font-size: 14px;
+        padding: 9px 16px;
+      }
+
+      .add-to-cart {
+        margin-top: 22px;
+        padding: 13px 28px;
+      }
+
+      .description-box {
+        width: 100%;
+        margin-top: 28px;
+        padding: 18px 20px;
+      }
+
+      .description-box h3 {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+
+      .description-box p {
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .cart-toast {
+        left: 16px;
+        right: 16px;
+        top: 95px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-container {
+        padding: 24px 4.5% 40px !important;
+      }
+
+      .details h1 {
+        font-size: 30px;
+      }
+
+      .swiper-slide img {
+        max-height: 360px;
+      }
+
+      .description-box {
+        padding: 16px 18px;
+      }
+
+      .description-box p {
+        font-size: 15.5px;
+      }
+    }
+
   </style>
   </style>
 </head>
@@ -677,13 +829,7 @@
 
 </nav>
   </header>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-  
-
- <main class="product-container">
+<main class="product-container">
     <div class="gallery">
       <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
         <div class="swiper-wrapper">
