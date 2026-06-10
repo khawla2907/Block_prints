@@ -717,6 +717,183 @@
         height: 115px;
       }
     }
+  
+
+    /* ===== MOBILE LAYOUT FIX: prevents sideways white space and header overlap ===== */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-width: 0;
+    }
+
+    img, video, iframe {
+      max-width: 100%;
+    }
+
+    header,
+    .site-footer,
+    .recommend-section,
+    .product-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .product-container {
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery,
+    .details,
+    .swiper,
+    .swiper-wrapper,
+    .swiper-slide,
+    .recommend-grid,
+    .recommend-card,
+    .footer-container {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .swiper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .footer-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        background-color: #8b1e3f;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+
+      .page-spacer {
+        height: 96px;
+      }
+
+      .product-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding: 24px 16px 44px;
+      }
+
+      .gallery,
+      .details {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
+
+      .mySwiper2 .swiper-slide img {
+        width: 100%;
+        min-height: auto;
+        max-height: none;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+
+      .swiper-thumb .swiper-slide {
+        width: 72px !important;
+        height: 88px;
+      }
+
+      .details {
+        padding-top: 0;
+      }
+
+      .details h1 {
+        font-size: 32px;
+        line-height: 1.15;
+      }
+
+      .details p.price {
+        font-size: 22px;
+      }
+
+      .option-button {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      .add-to-cart {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .description-box {
+        padding: 14px 16px;
+      }
+
+      .recommend-section {
+        padding: 36px 16px 44px !important;
+      }
+
+      .recommend-section h2 {
+        font-size: 28px;
+      }
+
+      .recommend-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+      }
+
+      .recommend-card {
+        width: 100%;
+      }
+
+      .recommend-card img {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+
+      .site-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .footer-brand,
+      .footer-links {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      header {
+        padding: 14px 18px;
+      }
+
+      .page-spacer {
+        height: 90px;
+      }
+
+      .product-container {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .cart-nav-link #cart-count,
+      #cart-count {
+        top: -9px;
+        right: -12px;
+      }
+    }
+
   </style>
 </head>
 <body>
