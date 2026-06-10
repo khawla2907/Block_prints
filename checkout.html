@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+padding:40px;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#8b1e3f;
+color:white;
+padding:12px;
+border:none;
+border-radius:5px;
+width:100%;
+font-size:16px;
+cursor:pointer;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Checkout</h2>
+
+<div id="cartSummary"></div>
+
+<h3>Customer Details</h3>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="text" id="address" placeholder="Address">
+<input type="text" id="city" placeholder="City">
+
+<h3>Payment Method</h3>
+
+<select id="payment">
+<option>Cash on Delivery</option>
+<option>Bank Transfer</option>
+<option>JazzCash</option>
+<option>Easypaisa</option>
+</select>
+
+<button onclick="placeOrder()">Place Order</button>
+
+</div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let summary = document.getElementById("cartSummary");
+
+let total = 0;
+
+cart.forEach(item=>{
+summary.innerHTML += `
+<div class="cart-item">
+<span>${item.name} x ${item.qty}</span>
+<span>PKR ${item.price}</span>
+</div>
+`;
+
+total += item.price * item.qty;
+
+});
+
+summary.innerHTML += `<hr><strong>Total: PKR ${total}</strong>`;
+
+function placeOrder(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let address = document.getElementById("address").value;
+let city = document.getElementById("city").value;
+let payment = document.getElementById("payment").value;
+
+let message = "New Order:%0A";
+
+cart.forEach(item=>{
+message += item.name + " x " + item.qty + "%0A";
+});
+
+message += "%0AName: "+name;
+message += "%0APhone: "+phone;
+message += "%0AAddress: "+address;
+message += "%0ACity: "+city;
+message += "%0APayment: "+payment;
+
+let phoneNumber = "923252041288";
+
+let url = "https://wa.me/"+phoneNumber+"?text="+message;
+
+window.open(url);
+
+}
+
+</script>
+
+</body>
+</html>
